@@ -40,7 +40,7 @@ class CarResource extends Resource
                 Textarea::make('description'),
 
                 FileUpload::make('images')
-                    ->label('صور السيارة')
+                    ->label('Car Images')
                     ->multiple()
                     ->reorderable()
                     ->directory('cars')
