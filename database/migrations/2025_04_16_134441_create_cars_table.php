@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->foreignId('type_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->nullable();
             $table->year('model_year');
             $table->integer('price');
             $table->integer('mileage');

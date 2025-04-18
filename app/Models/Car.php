@@ -13,6 +13,7 @@ class Car extends Model
         'title',
         'brand_id',
         'type_id',
+        'user_id',
         'model_year',
         'price',
         'mileage',
