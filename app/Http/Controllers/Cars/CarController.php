@@ -17,7 +17,6 @@ class CarController extends Controller
         return view('cars.create', [
             'brands' => Brand::all(),
             'types' => Type::all(),
-            'users' => User::all(),
         ]);
     }
     public function store(Request $request)

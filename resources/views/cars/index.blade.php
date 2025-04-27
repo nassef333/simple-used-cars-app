@@ -99,7 +99,7 @@
                     <div class="full">
                         <div class="center-desk">
                             <div class="logo">
-                                <a href="/"><img src="images/logo.png" alt="#" /></a>
+                                <a href="/"><img src="images/logo.jpg" alt="#" /></a>
                             </div>
                         </div>
                     </div>
@@ -115,10 +115,7 @@
                                     <a class="nav-link" href="/"> Home  </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact us</a>
+                                    <a class="nav-link" href="/#about">About</a>
                                 </li>
                             </ul>
 
@@ -236,9 +233,38 @@
             </div>
 
             <!-- Pagination -->
-            <div class="mt-4">
-                {{ $cars->withQueryString()->links() }}
-            </div>
+            <!-- resources/views/custom-pagination.blade.php -->
+
+            <nav class="mb-4">
+                <ul class="pagination justify-content-center">
+                    @if ($cars->onFirstPage())
+                        <li class="page-item disabled">
+                            <span class="page-link">&laquo; Previous</span>
+                        </li>
+                    @else
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $cars->previousPageUrl() }}" rel="prev">&laquo; Previous</a>
+                        </li>
+                    @endif
+
+                    @foreach ($cars->getUrlRange(1, $cars->lastPage()) as $page => $url)
+                        <li class="page-item {{ $cars->currentPage() == $page ? 'active' : '' }}">
+                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+
+                    @if ($cars->hasMorePages())
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $cars->nextPageUrl() }}" rel="next">Next &raquo;</a>
+                        </li>
+                    @else
+                        <li class="page-item disabled">
+                            <span class="page-link">Next &raquo;</span>
+                        </li>
+                    @endif
+                </ul>
+            </nav>
+
         </div>
     </div>
 </div>

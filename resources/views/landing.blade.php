@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>@yield('title', 'Rento')</title>
+    <title>@yield('title', 'سيارتي')</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -36,8 +36,18 @@
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
 </div>
 <!-- end loader -->
-<!-- header -->
-<!-- header -->
+<style>
+    .cross_img img {
+        max-width: 200px; /* أقصى عرض */
+        max-height: 200px; /* أقصى ارتفاع */
+        width: auto;
+        height: auto;
+        object-fit: cover; /* لو الصورة مش مناسبة، تقطع نفسها بشكل حلو */
+        border-radius: 50%; /* يخلي الصورة دائرية لو حبيت */
+        margin: auto;
+    }
+</style><!-- header -->
+
 <header>
     <!-- header inner -->
     <div class="header">
@@ -47,7 +57,7 @@
                     <div class="full">
                         <div class="center-desk">
                             <div class="logo">
-                                <a href="/"><img src="images/logo.png" alt="#" /></a>
+                                <a href="/"><img src="images/logo.jpg" alt="#" /></a>
                             </div>
                         </div>
                     </div>
@@ -63,10 +73,7 @@
                                     <a class="nav-link" href="/"> Home  </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact us</a>
+                                    <a class="nav-link" href="#about">About</a>
                                 </li>
                             </ul>
 
@@ -106,7 +113,7 @@
                     <p>
                         Whether you're looking to sell your car, rent one, or buy a used vehicle, our platform connects you with trusted sellers and offers great deals. Publish your car or find the perfect one today!
                     </p>
-                    <a href="{{ route('cars.create') }}">Start Listing Your Car Now</a>
+                    <a href="{{ route('cars.create') }}">Sell Your Car Now</a>
                 </div>
             </div>
         </div>
@@ -159,16 +166,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col">
                 <div class="row">
-                    <div class="col-md-6 offset-md-6">
+                    <div class="col">
                         <form class="main_form">
                             <div class="titlepage">
-                                <h2>Find A  Best Car For Rent</h2>
+                                <h2>Find Your New Car</h2>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a href="{{ route('cars.index') }}" class="find_btn text-center">Find Now</a>
+                                    <a href="{{ route('cars.index') }}" class="find_btn text-center" style="font-size: 45px">Find Now</a>
                                 </div>
                             </div>
                         </form>
@@ -179,139 +186,220 @@
     </div>
 </div>
 <!-- end bestCar -->
-<!-- choose  section -->
-<div class="choose">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2>Why Choose Us?</h2>
-                    <span>We offer exceptional services and products that stand out in the market. Here's why our clients love us:</span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="choose_box">
-                    <span>01</span>
-                    <p>We are committed to delivering high-quality products that meet the needs of our customers. Our attention to detail and dedication ensures that we always exceed expectations.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="choose_box">
-                    <span>02</span>
-                    <p>Our team of experts provides personalized services that cater to each customer's unique needs. We strive to build lasting relationships through exceptional customer support and trust.</p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="choose_box">
-                    <span>03</span>
-                    <p>We constantly innovate and stay ahead of industry trends to provide cutting-edge solutions. Our forward-thinking approach ensures that we are always ready for tomorrow’s challenges.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end choose  section -->
 <!-- cutomer -->
-<div class="cutomer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2>What is says our cutomer</h2>
+<section id="about">
+    <div class="cutomer" style="margin-top: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Meet Our Project Team</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="myCarousel" class="carousel slide cutomer_Carousel " data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="carousel-caption ">
-                                    <div class="cross_img">
-                                        <figure><img src="images/cross_img.png" alt="#"/></figure>
-                                    </div>
-                                    <div class="our cross_layout">
-                                        <div class="test_box">
-                                            <h4>Due markes</h4>
-                                            <span>Rental</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                            <i><img src="images/te1.png" alt="#"/></i>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide cutomer_Carousel" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                            <li data-target="#myCarousel" data-slide-to="7"></li>
+                            <li data-target="#myCarousel" data-slide-to="8"></li>
+                        </ol>
+                        <div class="carousel-inner">
+
+                            <!-- Dr Marco (Supervisor) - First Active -->
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/DrMarco.jpg" alt="Dr Marco"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Dr Marco</h4>
+                                                <span>Project Supervisor</span>
+                                                <p>Guiding and evaluating the students throughout the project journey.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="cross_img">
-                                        <figure><img src="images/cross_img.png" alt="#"/></figure>
-                                    </div>
-                                    <div class="our cross_layout">
-                                        <div class="test_box">
-                                            <h4>Due markes</h4>
-                                            <span>Rental</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                            <i><img src="images/te1.png" alt="#"/></i>
+
+                            <!-- Yousri (Team Leader) -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/Yousri.jpg" alt="Yousri"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Ahmed Yousri Mohamed Sayed Ahmed</h4>
+                                                <span>Team Leader</span>
+                                                <p>Leading the project team with skill and vision.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="cross_img">
-                                        <figure><img src="images/cross_img.png" alt="#"/></figure>
-                                    </div>
-                                    <div class="our cross_layout">
-                                        <div class="test_box">
-                                            <h4>Due markes</h4>
-                                            <span>Rental</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                            <i><img src="images/te1.png" alt="#"/></i>
+
+                            <!-- باقي الأعضاء بنفس الترتيب -->
+
+                            <!-- Adham Zakaria -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/AdhamZakaria.jpg" alt="Adham Zakaria"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Adham Zakaria</h4>
+                                                <span>Frontend Developer</span>
+                                                <p>Working hard to deliver an amazing user interface.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Ahmed Nasr -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/AhmedNasr.jpg" alt="Ahmed Nasr"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Ahmed Nasr</h4>
+                                                <span>Backend Developer</span>
+                                                <p>Building powerful and secure backend systems for the project.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ahmed Yousri -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/AhmedYousri.jpg" alt="Ahmed Yousri"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Ahmed Yousri Mohamed Mahmoud</h4>
+                                                <span>Full Stack Developer</span>
+                                                <p>Combining frontend and backend magic to create an amazing experience.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ehab -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/Ehab.jpg" alt="Ehab"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Ehab</h4>
+                                                <span>UI/UX Designer</span>
+                                                <p>Crafting intuitive and beautiful interfaces for users to enjoy.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Youssif Amer -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/YoussifAmer.jpg" alt="Youssif Amer"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Youssif Amer</h4>
+                                                <span>Backend Developer</span>
+                                                <p>Ensuring robust APIs and seamless database connections.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Youssif Farhan -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/YoussifFarhan.jpg" alt="Youssif Farhan"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Youssif Farhan</h4>
+                                                <span>Frontend Developer</span>
+                                                <p>Delivering responsive and interactive interfaces for users.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Youssif Refaat -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <div class="cross_img">
+                                            <figure><img src="images/about/YoussifRefaat.jpg" alt="Youssif Refaat"/></figure>
+                                        </div>
+                                        <div class="our cross_layout">
+                                            <div class="test_box">
+                                                <h4>Youssif Refaat Saad Mahmoud</h4>
+                                                <span>QA Tester</span>
+                                                <p>Testing the project and ensuring everything works perfectly.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
+                        <!-- Controls -->
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
                     </div>
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
 <!-- end cutomer -->
 <!--  footer -->
 <footer>
     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="cont_call">
-                        <h3> <strong class="multi color_chang"> Call us Now</strong><br>
-                            0123456789
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="copyright">
             <div class="container">
                 <div class="row">
